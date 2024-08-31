@@ -9,11 +9,16 @@ Spell check is enabled for Markdown, Txt, Org , and Latex files. Org mode is ena
 
 # Installation
 
-Ensure that the XDG_CONFIG_HOME environment variable is set, then run the following command:
+1. Ensure that the XDG_CONFIG_HOME environment variable is set, then run the following command:
 
+2. Run the following command:
 ```bash
 ./install.sh
 ```
+
+3. Open Neovim for the first time. Ignore any errors or warnings that may appear.
+
+4. Type :PackerSync in Neovim to install and sync all plugins.
 
 ## Plugins List
 

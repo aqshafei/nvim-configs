@@ -3,6 +3,18 @@
 My Neovim configs with full IDE features such as autocomplete, linting, and code actions. It uses Packer as the plugin manager.   
 Spell check is enabled for Markdown, Txt, Org , and Latex files. Org mode is enabled and working.
 
+# Requirements
+
+* Neovim 0.9.2 or later
+
+# Installation
+
+Ensure that the XDG_CONFIG_HOME environment variable is set, then run the following command:
+
+```bash
+./install.sh
+```
+
 ## Plugins List
 
 * [lualine](https://github.com/nvim-lualine/lualine.nvim) 

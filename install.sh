@@ -15,7 +15,7 @@ fi
 cp "./init.lua" "$NVIM_DIR/"
 cp -r "./lua" "$NVIM_DIR/"
 cp -r "./plugin" "$NVIM_DIR/"
-cp -r "./spell" "$NVIM_DIR"
+# cp -r "./spell" "$NVIM_DIR"
 
 echo "Installation complete."
 exit 0

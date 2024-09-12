@@ -30,7 +30,7 @@ require("mason-lspconfig").setup {
         "neocmake",
         "clangd",
         "pyright",
-        "tsserver",
+        "ts_ls",
         "gopls",
         "rust_analyzer",
         "lua_ls",
@@ -178,7 +178,7 @@ require("lspconfig")["arduino_language_server"].setup {
 }
 
 -- Typescript LSP
-require('lspconfig')["tsserver"].setup {
+require('lspconfig')["ts_ls"].setup {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = lsp_flags,

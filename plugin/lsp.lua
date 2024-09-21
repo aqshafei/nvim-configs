@@ -47,6 +47,8 @@ require("mason-lspconfig").setup {
         "texlab",
         "kotlin_language_server",
         "gradle_ls",
+        "helm_ls",
+        "yamlls",
     },
 }
 
@@ -211,9 +213,27 @@ require("lspconfig")["rust_analyzer"].setup {
 }
 
 -- SQL LSP
-
 require('lspconfig')["sqlls"].setup {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = lsp_flags,
 }
+
+-- Helm LSP
+require('lspconfig')["helm_ls"].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = lsp_flags,
+}
+
+-- Yaml LSP
+require('lspconfig')["yamlls"].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+        telemetry = {
+            enabled = false
+        }
+    },
+}
+

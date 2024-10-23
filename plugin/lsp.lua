@@ -204,11 +204,10 @@ require("lspconfig")["gopls"].setup {
 require("lspconfig")["rust_analyzer"].setup {
     on_attach = on_attach,
     capabilities = capabilities,
-
+    settings = lsp_flags,
     -- Server-specific settings...
     settings = {
         ["rust-analyzer"] = {},
-        lsp_flags,
     }
 }
 
@@ -233,6 +232,27 @@ require('lspconfig')["yamlls"].setup {
     settings = {
         telemetry = {
             enabled = false
+        },
+        yaml = {
+            schemas = {
+                ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook"] = "*play*.{yml,yaml}",
+                ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+                ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+                ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+                kubernetes = {
+                    "manifests/*.{yml,yaml}",
+                    "*deployment.{yml,yaml}",
+                    "*service.{yml,yaml}",
+                    "*configmap.{yml,yaml}",
+                    "*pv.{yml,yaml}",
+                    "*pvc.{yml,yaml}",
+                    "*storageclass.{yml,yaml}",
+                    "*secret.{yml,yaml}",
+                    "*statefulset.{yml,yaml}",
+                    "*daemonset.{yml,yaml}",
+                    "*ingress.{yml,yaml}",
+                },
+            }
         }
     },
 }

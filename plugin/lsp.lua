@@ -40,7 +40,7 @@ require("mason-lspconfig").setup {
         "unocss",
         "dockerls",
         "prosemd_lsp",
-        "ruff_lsp",
+        "ruff",
         "taplo",
         "lemminx",
         "yamlls",
@@ -160,7 +160,7 @@ require("lspconfig")["gradle_ls"].setup {
 }
 
 -- Python LSP
-require('lspconfig')["ruff_lsp"].setup {
+require('lspconfig')["ruff"].setup {
     on_attach = function(client, bufnr) client.server_capabilities.hoverProvider = false end,
     capabilities = capabilities,
     settings = lsp_flags,

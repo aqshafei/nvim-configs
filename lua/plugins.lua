@@ -82,6 +82,11 @@ return require("lazy").setup({
                 "nvim-treesitter/nvim-treesitter",
                 "nvim-tree/nvim-web-devicons",
             }
+        },
+        {
+            "folke/trouble.nvim",
+            opts = {},
+            cmd = "Trouble",
         }
     },
 

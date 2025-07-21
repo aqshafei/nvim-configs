@@ -1,32 +1,26 @@
-local def_opt = { noremap = true, silent = true }
-
 -- Ctrl+o to toggle nvim-tree
-vim.keymap.set('n', "<C-o>", ":NvimTreeToggle<CR>", def_opt)
+vim.keymap.set('n', "<C-o>", ":NvimTreeToggle<CR>", { desc = "Toggle nvim-tree"})
 
 -- LSP keybindings
-vim.keymap.set({'n', 'v'}, "<A-Enter>", "<cmd>Lspsaga code_action<CR>", def_opt)
-vim.keymap.set('n', "gD", vim.lsp.buf.declaration, def_opt)
-vim.keymap.set('n', "gd", "<cmd>Lspsaga peek_definition<CR>", def_opt)
-vim.keymap.set('n', "gr", "<cmd>Lspsaga rename<CR>", def_opt)
-vim.keymap.set('n', "gh", "<cmd>Lspsaga lsp_finder<CR>", def_opt)
-vim.keymap.set('n', 'K', "<cmd>Lspsaga hover_doc<CR>", def_opt)
-vim.keymap.set('n', "<C-k>", vim.lsp.buf.signature_help, def_opt)
+vim.keymap.set({'n', 'v'}, "<A-Enter>", "<cmd>Lspsaga code_action<CR>", { desc = "Lspsaga code action" })
+vim.keymap.set('n', "gD", vim.lsp.buf.declaration, { desc = "Show declaration" })
+vim.keymap.set('n', "gd", "<cmd>Lspsaga peek_definition<CR>", { desc = "Peek definitions" })
+vim.keymap.set('n', "gr", "<cmd>Lspsaga rename<CR>", { desc = "Lspsaga rename" })
+vim.keymap.set('n', "gh", "<cmd>Lspsaga lsp_finder<CR>", { desc = "LSP finder" })
+vim.keymap.set('n', 'K', "<cmd>Lspsaga hover_doc<CR>", { desc = "Hover documentation"})
+vim.keymap.set('n', "<C-k>", vim.lsp.buf.signature_help, { desc = "LSP signature help"})
 
 -- Telescope keybindings
-local telescope = require("telescope.builtin")
--- file files
-vim.keymap.set('n', "<leader>ff", telescope.find_files, def_opt)
--- live grep
-vim.keymap.set('n', "<leader>fg", telescope.live_grep, def_opt)
--- buffers
-vim.keymap.set('n', "<leader>fb", telescope.buffers, def_opt)
--- help tags
-vim.keymap.set('n', "<leader>fh", telescope.help_tags, def_opt)
+local builtin = require("telescope.builtin")
+vim.keymap.set('n', "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+vim.keymap.set('n', "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+vim.keymap.set('n', "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+vim.keymap.set('n', "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 
 -- Troble.nvim keybindings
--- vim.keymap.set("n", "<leader>xx", function() require("trouble").open() end)
--- vim.keymap.set("n", "<leader>xw", function() require("trouble").open("workspace_diagnostics") end)
--- vim.keymap.set("n", "<leader>xd", function() require("trouble").open("document_diagnostics") end)
--- vim.keymap.set("n", "<leader>xq", function() require("trouble").open("quickfix") end)
--- vim.keymap.set("n", "<leader>xl", function() require("trouble").open("loclist") end)
--- vim.keymap.set("n", "gR", function() require("trouble").open("lsp_references") end)
+vim.keymap.set('n', "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
+vim.keymap.set('n', "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
+vim.keymap.set('n', "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Symbols (Trouble)" })
+vim.keymap.set('n', "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", { desc = "LSP Definitions / references / ... (Trouble)" })
+vim.keymap.set('n', "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
+vim.keymap.set('n', "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })

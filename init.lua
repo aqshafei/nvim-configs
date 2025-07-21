@@ -31,8 +31,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.syntax = "on"
 vim.opt.syntax = "enable"
 
--- Setup `mapleader` and `maplocalleader` for lazy.nvim
-vim.g.mapleader = " "
+vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 
 -- Spell Check

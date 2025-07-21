@@ -1,49 +1,19 @@
---[[ 
-
-licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
-distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
-to you under the Apache License, Version 2.0 (the
-license"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
-
-  http://www.apache.org/licenses/LICENSE-2.0
-
-unless required by applicable law or agreed to in writing,
-software distributed under the License is distributed on an
-aS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-kIND, either express or implied.  See the License for the
-specific language governing permissions and limitations
-under the License.
-
-@author Aqeel AlShafei
-@data November 20 2022
-@modified February 24 2024
-
-Current Keymap
-crtl+o to toggle nerdtree
-ctrl+p Fuzzy open files
-Ctrl+t open a split top of the window with a terminal instance
-K to show documentation in preview window (coc.nvim feature) 
-
-]]
-
 -- General Settings
 vim.opt.encoding = "utf-8"
 vim.opt.laststatus = 2
 vim.opt.termguicolors = true
 
--- disable netrw
+-- Disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- eanble mouse support
+-- Eanble mouse support
 vim.opt.mouse = 'a'
 
--- Window Layout
+-- Window layout
 vim.opt.number = true
 vim.opt.title = true
+vim.opt.winborder = "rounded"
 
 -- Editor
 vim.opt.filetype = "plugin"
@@ -58,9 +28,11 @@ vim.opt.smarttab = true
 
 vim.opt.clipboard = "unnamedplus"
 
--- Syntax
 vim.opt.syntax = "on"
 vim.opt.syntax = "enable"
+
+vim.g.mapleader = "\\"
+vim.g.maplocalleader = "\\"
 
 -- Spell Check
 vim.cmd([[
@@ -72,5 +44,5 @@ vim.cmd([[
 
 -- Load plugins
 require("plugins")
--- Load Keymaps
+-- Load keymaps
 require("keymaps")

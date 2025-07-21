@@ -36,9 +36,9 @@ return require("lazy").setup({
         },
         {
             "nvim-telescope/telescope.nvim",
-            branch = "0.1.x",
+            branch = "master",
             dependencies = "nvim-lua/plenary.nvim",
-            config = function() require("plugins-config.telescope")() end
+            config = function() require("telescope").setup() end
         },
         {
             "akinsho/toggleterm.nvim",
@@ -87,7 +87,12 @@ return require("lazy").setup({
             "folke/trouble.nvim",
             opts = {},
             cmd = "Trouble",
-        }
+        },
+        {
+            "startup-nvim/startup.nvim",
+            dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
+            config = function() require("plugins-config.startup")() end,
+        },
     },
 
     install = { colorscheme = { "habamax" } },

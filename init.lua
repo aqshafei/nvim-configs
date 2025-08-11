@@ -31,8 +31,8 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.syntax = "on"
 vim.opt.syntax = "enable"
 
-vim.g.mapleader = "\\"
-vim.g.maplocalleader = "\\"
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Spell Check
 vim.cmd([[

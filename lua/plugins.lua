@@ -93,9 +93,17 @@ return require("lazy").setup({
             dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
             config = function() require("plugins-config.startup")() end,
         },
+        {
+            "ThePrimeagen/harpoon",
+            branch = "harpoon2",
+            dependencies = "nvim-lua/plenary.nvim"
+        },
     },
 
     install = { colorscheme = { "habamax" } },
     -- automatically check for plugin updates
-    checker = { enabled = true },
+    checker = { 
+        enabled = true,
+        notify = false,
+    },
 })

@@ -1,7 +1,7 @@
 return function ()
     local servers = {
     -- CMake
-    "cmake",
+    "neocmake",
     -- Bash
     "bashls",
     -- C/C++/Objective-C
@@ -24,13 +24,13 @@ return function ()
     "gradle_ls",
     -- Python
     "ruff",
-    "pyright",
+    "ty",
     -- Arduino
     "arduino_language_server",
     -- JavaScript and TypeScript
     "eslint",
     -- CSS
-    "unocss",
+    "cssmodules_ls",
     -- Go
     "gopls",
     -- Rust

@@ -43,6 +43,40 @@ return function ()
     "yamlls",
 }
 
+vim.filetype.add({
+    pattern = {
+        [".*/templates/.*%.yaml"] = function(path, _)
+            if vim.fs.root(path, "Chart.yaml") then
+                return "helm"
+            end
+            return "yaml"
+        end,
+
+        [".*/templates/.*%.yml"] = function(path, _)
+            if vim.fs.root(path, "Chart.yaml") then
+                return "helm"
+            end
+            return "yaml"
+        end,
+
+        [".*/templates/.*%.tpl"] = function(path, _)
+            if vim.fs.root(path, "Chart.yaml") then
+                return "helm"
+            end
+        end,
+    }
+})
+
+vim.lsp.config("helm_ls", {
+    settings = {
+        ["helm-ls"] = {
+            yamlls = {
+                enabled = true,
+            },
+        },
+    },
+})
+
 -- `yamlls` lsp configurations
 vim.lsp.config("yamlls", {
     settings = {
@@ -51,8 +85,7 @@ vim.lsp.config("yamlls", {
         },
         yaml = {
             schemas = {
-                ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook"] =
-                "*play*.{yml,yaml}",
+                ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook"] = "*play*.{yml,yaml}",
                 ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
                 ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
                 ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",

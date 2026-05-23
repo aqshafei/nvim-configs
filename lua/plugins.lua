@@ -52,9 +52,7 @@ return require("lazy").setup({
             config = function() require("bufferline").setup() end
         },
         {
-
             "nvim-treesitter/nvim-treesitter",
-            branch = "main",
             build = ":TSUpdate",
             config = function() require("plugins-config.treesitter")() end,
             lazy = false,
@@ -97,6 +95,10 @@ return require("lazy").setup({
             "ThePrimeagen/harpoon",
             branch = "harpoon2",
             dependencies = "nvim-lua/plenary.nvim"
+        },
+        {
+            "towolf/vim-helm",
+            ft = "helm",
         },
     },
 

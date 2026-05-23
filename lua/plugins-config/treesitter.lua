@@ -37,7 +37,8 @@ return function()
       "vhdl",
       "vim",
       "vimdoc",
-      "yaml"
+      "yaml",
+      "helm",
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)

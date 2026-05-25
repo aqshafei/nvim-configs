@@ -39,8 +39,8 @@ return function ()
     "sqls",
     -- Helm
     "helm_ls",
-    -- Yaml
-    "yamlls",
+    -- Lua
+    "lua_ls",
 }
 
 vim.filetype.add({
@@ -75,6 +75,19 @@ vim.lsp.config("helm_ls", {
             },
         },
     },
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "helm",
+    callback = function()
+        vim.b.did_indent = nil
+        vim.cmd("runtime! indent/yaml.vim")
+
+        vim.opt_local.expandtab = true
+        vim.opt_local.tabstop = 2
+        vim.opt_local.softtabstop = 2
+        vim.opt_local.shiftwidth = 2
+    end,
 })
 
 -- `yamlls` lsp configurations

@@ -29,6 +29,7 @@ return function ()
     "arduino_language_server",
     -- JavaScript and TypeScript
     "eslint",
+    "denols",
     -- CSS
     "cssmodules_ls",
     -- Go
